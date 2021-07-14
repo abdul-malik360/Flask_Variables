@@ -31,13 +31,12 @@ def guest_page(name):
 
 @app.route('/payment/<float:salary>')
 def payment(salary):
-    if salary < 10500.50:
-        # return redirect('https://www.fnb.co.za')
-        return redirect('http://www.google.co.za')
+    if salary > 10500.50:
+        return redirect('https://www.fnb.co.za')
 
     else:
-        # return redirect('https://www.sahomeloans.com')
-        return redirect('http://www.capetimes.co.za')
+        if salary < 10500.50:
+            return redirect('https://www.sahomeloans.com')
 
 
 if __name__ == '__main__':
